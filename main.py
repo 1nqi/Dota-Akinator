@@ -14,7 +14,7 @@ class Akinator:
 
         pygame.init()
         self.screen = pygame.display.set_mode((800, 600))
-        pygame.display.set_caption("Akinator Game")
+        pygame.display.set_caption("Dota Akinator")
         self.font = pygame.font.Font(None, 36)
         self.background = pygame.image.load("background.jpg").convert()
 
