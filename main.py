@@ -68,7 +68,7 @@ class Akinator:
 
 
     def display_correct_guess(self):
-        correct_text = "I guessed the correct hero ez so much"
+        correct_text = "I guessed the correct hero. It was easy!"
         correct_surface = self.font.render(correct_text, True, (255, 255, 255))
         text_rec = correct_surface.get_rect(center=(400, 300))
         self.screen.blit(correct_surface, text_rec)
