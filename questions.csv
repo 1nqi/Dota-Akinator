@@ -1,0 +1,40 @@
+column,question
+is strength,Is your hero's main attribute Strength?
+is agility,Is your hero's main attribute Agility?
+is intelligence,Is your hero's main attribute Intelligence?
+is universal,Is your hero Universal?
+is melee,Is your hero melee?
+has no legs,Does your hero have no legs at all?
+has two legs,Does your hero have exactly two legs?
+has four or more legs,Does your hero have four or more legs?
+role carry,Does your hero play carry?
+role disabler,"Does your hero have a disable (stun, root, hex)?"
+role durable,Is your hero durable?
+role escape,Does your hero have an escape?
+role initiator,Does your hero initiate fights?
+role nuker,Does your hero nuke with spell damage?
+role pusher,Does your hero push lanes?
+role support,Does your hero play support?
+is human,Is your hero human?
+is male,Is your hero male?
+is female,Is your hero female?
+is undead,Is your hero undead?
+is robot,Is your hero a robot or a machine?
+is spirit,Is your hero a spirit?
+is mage,Is your hero a mage?
+is demon,Is your hero a demon?
+is god,Is your hero a god?
+has legs,Does your hero have legs?
+heals,Can your hero heal?
+has sword,Does your hero carry a sword?
+is mid,Does your hero usually play mid?
+is offlaner,Does your hero usually play offlane?
+has pure damage,Does your hero deal pure damage?
+is butcher,Is your hero the Butcher?
+is rider,Does your hero ride a mount?
+has disables,"Does your hero have a disable (stun, root, hex)?"
+is king,Is your hero a king?
+made of rock,Is your hero made of rock?
+is flying,Can your hero fly?
+is animal,Is your hero an animal or a beast?
+has invisibility,Can your hero turn invisible?
