@@ -1,0 +1,9 @@
+-r requirements.txt
+
+requests          # build_dataset.py
+scikit-learn      # baseline.py
+matplotlib        # plots.py
+pytest
+pandas            # legacy/v1_tree.py
+pygame            # legacy/v1_tree.py
+Pillow            # legacy/v1_tree.py
