@@ -1,0 +1,31 @@
+column,question
+is human,Is your hero human?
+is male,Is your hero male?
+is female,Is your hero female?
+is undead,Is your hero undead?
+is robot,Is your hero a robot or a machine?
+is support,Does your hero play support?
+is carry,Does your hero play carry?
+is spirit,Is your hero a spirit?
+is mage,Is your hero a mage?
+is demon,Is your hero a demon?
+is god,Is your hero a god?
+is intelligence,Is your hero's main attribute Intelligence?
+is agility,Is your hero's main attribute Agility?
+is strength,Is your hero's main attribute Strength?
+is universal,Is your hero Universal?
+has legs,Does your hero have legs?
+heals,Can your hero heal?
+has sword,Does your hero carry a sword?
+is mid,Does your hero usually play mid?
+is offlaner,Does your hero usually play offlane?
+has pure damage,Does your hero deal pure damage?
+is butcher,Is your hero the Butcher?
+is rider,Does your hero ride a mount?
+has disables,"Does your hero have a disable (stun, root, hex)?"
+is king,Is your hero a king?
+has four or more legs,Does your hero have four or more legs?
+made of rock,Is your hero made of rock?
+is flying,Can your hero fly?
+is animal,Is your hero an animal or a beast?
+has invisibility,Can your hero turn invisible?
