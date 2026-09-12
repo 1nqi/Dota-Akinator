@@ -4,6 +4,10 @@
 
 Guess which of the 127 Dota 2 heroes you are thinking of.
 
+## Preview:
+
+![previewakinator](assets/preview.gif)
+
 The engine keeps a probability distribution over every hero, asks whichever question
 maximises the mutual information between the answer and the hero's identity, and
 updates by Bayes with an explicit model of how often players hedge, pass or get it wrong.
@@ -25,10 +29,6 @@ Steam CDN; the desktop client caches them on disk and plays offline after the fi
 pipe, which is how the regression runs are driven.
 
 ![robustness](results/robustness.png)
-
-## Preview:
-
-![previewakinator](assets/preview.gif)
 
 ## How it works
 
