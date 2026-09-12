@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dota Akinator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="board">
+  <p id="hint">1 Yes&nbsp;&nbsp; 2 Probably&nbsp;&nbsp; 3 Don't know&nbsp;&nbsp; 4 Probably not&nbsp;&nbsp; 5 No&nbsp; R restart</p>
+
+  <img id="genie" src="/assets/akinator.png" alt="">
+
+  <section id="stage">
+    <p id="asked">0 of 20 questions</p>
+    <div id="track"><i id="progress"></i></div>
+
+    <div id="asking">
+      <h1 id="question"></h1>
+      <div id="answers">
+        <button data-answer="yes">Yes</button>
+        <button data-answer="probably">Probably</button>
+        <button data-answer="idk">Don't know</button>
+        <button data-answer="probably not">Probably not</button>
+        <button data-answer="no">No</button>
+      </div>
+    </div>
+
+    <div id="guess" hidden>
+      <img id="guess-image" alt="">
+      <p class="lead">I think your hero is</p>
+      <h1 id="guess-name"></h1>
+      <p class="lead"><span id="guess-p"></span> sure, after <span id="guess-q"></span> questions</p>
+      <div id="confirm">
+        <button id="right">Correct</button>
+        <button id="wrong">Wrong</button>
+      </div>
+    </div>
+
+    <div id="over" hidden>
+      <h1 id="over-title"></h1>
+      <button id="again">Play again</button>
+    </div>
+  </section>
+
+  <aside id="side">
+    <p id="side-title">WHAT I BELIEVE RIGHT NOW</p>
+    <ul id="top"></ul>
+  </aside>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

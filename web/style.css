@@ -1,0 +1,271 @@
+/* Every number here mirrors desktop.py, so the two clients look the same.
+   pygame Font(None, N) is not N pixels tall: 46 renders at 31, 28 at 19, 23 at 15. */
+@font-face {
+  font-family: "FreeSansBold";
+  src: url("freesansbold.ttf") format("truetype");
+  font-display: block;
+}
+
+:root {
+  --text: #eef0f4;
+  --dim: #b0b6c2;
+  --line: #5c6474;
+  --accent: #c23b22;
+  --accent-soft: #60261c;
+  --btn: #2e3440;
+  --panel: rgba(12, 14, 18, .667);
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font: 15px/1.35 "FreeSansBold", "Arial Black", system-ui, sans-serif;
+  color: var(--text);
+  /* desktop.py blits the artwork at (0,0), so anchor to the top or the browser
+     centres it and shows the bright middle instead of the dark sky */
+  background: #0a0c10 url("/assets/background.jpg") center top / cover fixed no-repeat;
+}
+
+/* the same scrim desktop.py paints over the artwork, the lower half is far too
+   bright for white text without it */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 16, .588);
+}
+
+#board {
+  position: relative;
+  width: 1200px;
+  height: 720px;
+  margin: 0 auto;
+  transform-origin: top center;
+}
+
+#hint {
+  position: absolute;
+  left: 50px;
+  top: 15px;
+  margin: 0;
+  font-size: 15px;
+  color: var(--dim);
+}
+
+#genie {
+  position: absolute;
+  left: 18px;
+  top: 337px;
+  width: 300px;
+}
+
+#stage, #side {
+  position: absolute;
+  top: 92px;
+  height: 568px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+#stage { left: 336px; width: 548px; }
+#side { left: 906px; width: 276px; }
+
+/* ---- stage ---- */
+
+#asked {
+  position: absolute;
+  left: 22px;
+  top: 20px;
+  margin: 0;
+  font-size: 15px;
+  color: var(--dim);
+}
+
+#track {
+  position: absolute;
+  left: 22px;
+  top: 48px;
+  width: 504px;
+  height: 3px;
+  background: var(--line);
+}
+
+#progress {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--accent);
+  transition: width .35s ease;
+}
+
+#question {
+  position: absolute;
+  left: 22px;
+  top: 88px;
+  width: 504px;
+  margin: 0;
+  font-size: 31px;
+  line-height: 46px;
+  font-weight: normal;
+}
+
+#answers {
+  position: absolute;
+  left: 22px;
+  top: 254px;
+  width: 504px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  height: 46px;
+  margin-bottom: 8px;
+  font: inherit;
+  font-size: 19px;
+  color: var(--text);
+  background: var(--btn);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  cursor: pointer;
+  transition: background .15s ease, transform .08s ease;
+}
+
+button:hover { background: #3a4150; }
+button:active { transform: scale(.99); }
+
+#answers button[data-answer="yes"], #right, #again { background: var(--accent-soft); }
+#answers button[data-answer="yes"]:hover, #right:hover, #again:hover { background: #7a3125; }
+
+body.busy button { opacity: .55; pointer-events: none; }
+
+/* ---- guess ---- */
+
+#guess-image {
+  position: absolute;
+  left: 22px;
+  top: 88px;
+  width: 300px;
+  height: 169px;
+  object-fit: cover;
+  animation: rise .3s ease both;
+}
+
+#guess .lead { position: absolute; left: 22px; margin: 0; font-size: 15px; color: var(--dim); }
+#guess .lead:nth-of-type(1) { top: 278px; }
+#guess .lead:nth-of-type(2) { top: 354px; }
+
+#guess-name {
+  position: absolute;
+  left: 22px;
+  top: 298px;
+  margin: 0;
+  font-size: 31px;
+  font-weight: normal;
+  animation: rise .3s ease both;
+}
+
+#confirm {
+  position: absolute;
+  left: 22px;
+  top: 388px;
+  display: flex;
+  gap: 10px;
+}
+
+#confirm button { width: 130px; margin: 0; }
+
+/* ---- over ---- */
+
+#over h1 {
+  position: absolute;
+  left: 22px;
+  top: 150px;
+  width: 504px;
+  margin: 0;
+  font-size: 31px;
+  line-height: 46px;
+  font-weight: normal;
+}
+
+#again {
+  position: absolute;
+  left: 22px;
+  top: 270px;
+  width: 180px;
+  height: 48px;
+  margin: 0;
+}
+
+/* ---- sidebar ---- */
+
+#side-title {
+  position: absolute;
+  left: 20px;
+  top: 24px;
+  margin: 0;
+  font-size: 15px;
+  color: var(--dim);
+}
+
+#top {
+  position: absolute;
+  left: 0;
+  top: 66px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#top li { position: relative; height: 60px; }
+
+#top .name {
+  position: absolute;
+  left: 20px;
+  right: 64px;   /* desktop.py leaves the same room for the percentage */
+  top: 0;
+  font-size: 19px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#top .p {
+  position: absolute;
+  right: 20px;
+  top: 4px;
+  font-size: 15px;
+  color: var(--dim);
+}
+
+#top .bar {
+  position: absolute;
+  left: 20px;
+  top: 32px;
+  width: 236px;
+  height: 4px;
+  background: var(--line);
+}
+
+#top .fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width .35s ease;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* the board is a fixed 1200x720 like the desktop window, so shrink it to fit
+   instead of reflowing into a layout the desktop client does not have */
+@media (max-width: 1200px) {
+  body { overflow-x: hidden; }
+  #board { transform: scale(calc(100vw / 1200)); }
+}
