@@ -5,6 +5,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import LabelEncoder
 from PIL import Image
 import time
+import os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
 class Akinator:
     def __init__(self, dataset):
         self.dataset = dataset
@@ -16,7 +20,7 @@ class Akinator:
         self.screen = pygame.display.set_mode((800, 600))
         pygame.display.set_caption("Dota Akinator")
         self.font = pygame.font.Font(None, 36)
-        self.background = pygame.image.load("background.jpg").convert()
+        self.background = pygame.image.load(os.path.join(HERE, "background.jpg")).convert()
 
     def build_decision_tree(self):
         X = self.dataset.drop(columns=['hero'])
@@ -113,8 +117,7 @@ class Akinator:
         most_likely_hero = self.label_encoder.classes_[predicted_class]
 
         self.display_result(most_likely_hero, posterior_probability)
-        # huy = "C:\\Users\\dania\\OneDrive\\Рабочий стол\\Akinator\\ml_akinator\\akin\\heroes\\"
-        path = 'images/' + most_likely_hero.lower().replace(" ", "").replace(".", "") + '.png'
+        path = os.path.join(HERE, 'images', most_likely_hero.lower().replace(" ", "").replace(".", "") + '.png')
         img = Image.open(path)
 
         max_width, max_height = 700, 300
@@ -184,7 +187,7 @@ class Akinator:
             self.play(node_index)
         
 
-dataset = pd.read_csv('heroes.csv')
-
-akinator = Akinator(dataset)
-akinator.play()
+if __name__ == "__main__":
+    dataset = pd.read_csv(os.path.join(HERE, os.pardir, 'data', 'legacy_t.csv'))
+    akinator = Akinator(dataset)
+    akinator.play()
