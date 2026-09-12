@@ -1,6 +1,7 @@
 ﻿# Dota-Akinator
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
+
 Guess which of the 127 Dota 2 heroes you are thinking of.
 
 The engine keeps a probability distribution over every hero, asks whichever question
