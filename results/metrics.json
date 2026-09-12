@@ -1,0 +1,171 @@
+{
+ "heroes": 127,
+ "questions": 39,
+ "trials": 500,
+ "honest": {
+  "engine": {
+   "win_rate": 0.978,
+   "first_guess_accuracy": 0.874,
+   "mean_questions": 10.355828220858896,
+   "median_questions": 9
+  },
+  "legacy tree": {
+   "win_rate": 0.888,
+   "first_guess_accuracy": 0.888,
+   "mean_questions": 12.29954954954955,
+   "median_questions": 13.0
+  }
+ },
+ "robustness": [
+  {
+   "flip": 0.0,
+   "engine_win": 0.978,
+   "engine_questions": 10.355828220858896,
+   "tree_win": 0.888
+  },
+  {
+   "flip": 0.05,
+   "engine_win": 0.892,
+   "engine_questions": 11.614349775784753,
+   "tree_win": 0.498
+  },
+  {
+   "flip": 0.1,
+   "engine_win": 0.792,
+   "engine_questions": 13.118686868686869,
+   "tree_win": 0.294
+  },
+  {
+   "flip": 0.2,
+   "engine_win": 0.478,
+   "engine_questions": 14.481171548117155,
+   "tree_win": 0.128
+  },
+  {
+   "flip": 0.3,
+   "engine_win": 0.228,
+   "engine_questions": 15.280701754385966,
+   "tree_win": 0.05
+  }
+ ],
+ "unsure": [
+  {
+   "idk": 0.0,
+   "engine_win": 0.978,
+   "engine_questions": 10.355828220858896,
+   "tree_win": 0.888
+  },
+  {
+   "idk": 0.1,
+   "engine_win": 0.954,
+   "engine_questions": 12.044025157232705,
+   "tree_win": 0.71
+  },
+  {
+   "idk": 0.2,
+   "engine_win": 0.912,
+   "engine_questions": 13.298245614035087,
+   "tree_win": 0.544
+  },
+  {
+   "idk": 0.3,
+   "engine_win": 0.842,
+   "engine_questions": 14.959619952494062,
+   "tree_win": 0.41
+  }
+ ],
+ "accuracy_at_k": {
+  "1": 0.022,
+  "3": 0.06,
+  "5": 0.268,
+  "7": 0.768,
+  "10": 0.856,
+  "15": 0.856,
+  "20": 0.856
+ },
+ "eps_sweep": [
+  {
+   "eps": 0.01,
+   "win_rate": 0.82,
+   "mean_questions": 9.758536585365853
+  },
+  {
+   "eps": 0.03,
+   "win_rate": 0.822,
+   "mean_questions": 10.61800486618005
+  },
+  {
+   "eps": 0.07,
+   "win_rate": 0.792,
+   "mean_questions": 13.118686868686869
+  },
+  {
+   "eps": 0.12,
+   "win_rate": 0.768,
+   "mean_questions": 15.127604166666666
+  },
+  {
+   "eps": 0.2,
+   "win_rate": 0.726,
+   "mean_questions": 17.016528925619834
+  }
+ ],
+ "coverage": {
+  "hand labelled": {
+   "win_rate": 1.0,
+   "first_guess_accuracy": 1.0,
+   "mean_questions": 8.49,
+   "median_questions": 8.0,
+   "n": 24
+  },
+  "api only": {
+   "win_rate": 0.966,
+   "first_guess_accuracy": 0.846,
+   "mean_questions": 10.830227743271221,
+   "median_questions": 10,
+   "n": 103
+  }
+ },
+ "calibration": [
+  {
+   "confidence": 0.1578913010008259,
+   "accuracy": 0.07142857142857142,
+   "count": 42
+  },
+  {
+   "confidence": 0.25828340854448517,
+   "accuracy": 0.25925925925925924,
+   "count": 27
+  },
+  {
+   "confidence": 0.36779253765057907,
+   "accuracy": 0.38461538461538464,
+   "count": 26
+  },
+  {
+   "confidence": 0.45632182736190524,
+   "accuracy": 0.6071428571428571,
+   "count": 28
+  },
+  {
+   "confidence": 0.6629488145943245,
+   "accuracy": 0.75,
+   "count": 32
+  },
+  {
+   "confidence": 0.7593130026589384,
+   "accuracy": 0.8,
+   "count": 40
+  },
+  {
+   "confidence": 0.8670700279724638,
+   "accuracy": 0.945054945054945,
+   "count": 182
+  },
+  {
+   "confidence": 0.9323961046357333,
+   "accuracy": 0.9649122807017544,
+   "count": 114
+  }
+ ]
+}
